@@ -1,0 +1,55 @@
+const fs = require("fs");
+
+let data;
+if (fs.existsSync("./antilink.json")) {
+    data = JSON.parse(fs.readFileSync("./antilink.json"));
+} else {
+    data = {};
+}
+
+if (m.isGroup && data[m.chat]?.enabled) {
+
+    const linkRegex = /(https?:\/\/[^\s]+)/gi; // detect any link
+    const foundLink = m.body.match(linkRegex);
+
+    if (foundLink) {
+
+        if (!isAdmin) {
+
+            // Delete message
+            await sock.sendMessage(m.chat, { delete: m.key });
+
+            // Initialize warn count
+            if (!data[m.chat].warns[m.sender]) data[m.chat].warns[m.sender] = 0;
+
+            data[m.chat].warns[m.sender] += 1;
+
+            const warns = data[m.chat].warns[m.sender];
+            fs.writeFileSync("./antilink.json", JSON.stringify(data, null, 2));
+
+            // Warning message
+            if (warns < 4) {
+                return m.reply(
+                    `⚠️ *Warning ${warns}/4*\n` +
+                    `❗ লিংক পাঠানো নিষেধ!\n` +
+                    `আরো ${4 - warns} বার পাঠালে আপনাকে গ্রুপ থেকে রিমুভ করা হবে।`
+                );
+            }
+
+            // Auto kick if warning reaches 4
+            if (warns >= 4) {
+                try {
+                    await m.reply(`🚫 *Warning 4/4*\nআপনাকে গ্রুপ থেকে রিমুভ করা হচ্ছে...`);
+                    await sock.groupParticipantsUpdate(m.chat, [m.sender], "remove");
+
+                    // Reset warning after kick
+                    data[m.chat].warns[m.sender] = 0;
+                    fs.writeFileSync("./antilink.json", JSON.stringify(data, null, 2));
+
+                } catch (err) {
+                    console.log("Kick Failed:", err);
+                }
+            }
+        }
+    }
+}
