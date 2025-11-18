@@ -1,7 +1,7 @@
 # 🍋 Limon Bot (Multi Device)
 
 <div align="center">
-  <img src="IMAGE_URL_HERE" alt="Limon Bot Logo" width="600"/>
+  <img src=https://i.imgur.com/placeholder.png"alt="Limon Bot Logo" width="600"/>
 </div>
 
 ## 👑 Owner Information
