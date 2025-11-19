@@ -79,12 +79,11 @@ npm start
 ---
 ## 📌 PAIR CODE LOGIN 
 
-https://pair-code-bot.vercel.app/pair
+## https://pair-code-bot.vercel.app/pair
 
 ## 🔑 WhatsApp Login (QR)
 
-Bot চালু করলে টার্মিনালে একটি QR কোড দেখা যাবে।  
-WhatsApp → Linked Devices → **Scan QR**
+## https://pair-code-bot.vercel.app/https
 
 ---
 
