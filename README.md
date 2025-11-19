@@ -85,6 +85,12 @@ npm start
 
 ## https://pair-code-bot.vercel.app/https
 
+
+<!-- Action Buttons -->
+<p align="center">
+  <a href="https://www.ibrahimadams.site/scanner">
+    <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/🔑_GET_QUANTUM_SESSION-000000?style=for-the-badge&logo=quantum&logoColor=white&color=skyblue" width="260" height="50"/>
+  </a>
 ---
 
 ## ⚙ Configuration (config.js)
