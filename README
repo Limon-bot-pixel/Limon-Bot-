@@ -1,0 +1,148 @@
+<h1 align="center">🦋 𝐋𝐈𝐌𝐎𝐍 𝐁𝐎𝐓 𝐕𝟓</h1>
+
+<p align="center">
+<img src="https://i.ibb.co/sj6QfDm/file-1215.jpg" width="300" />
+</p>
+
+<p align="center">
+<b>🔥 The Most Advanced WhatsApp Multi-Device Bot of Bangladesh</b><br>
+🧑‍💻 Developed & Designed by <b>Mohammad Limon (Limon BbZ)</b><br>
+🌐 Repository: <a href="https://github.com/Limon-bot-pixel/Limon-Bot-">Limon-Bot-V5</a>
+</p>
+
+---
+
+# 🚀 **Getting Started**
+
+## 📌 1. Clone The Repository
+```
+git clone https://github.com/Limon-bot-pixel/Limon-Bot-
+cd Limon-Bot-
+```
+
+---
+
+# 💚 **Pair Code Login (Recommended)**  
+👉 **Generate Pair Code:**  
+```
+https://pair.limonbot.vercel.app
+```
+
+---
+
+# 🟦 **QR Code Login**
+👉 **Scan QR Code:**  
+```
+https://qr.limonbot.vercel.app
+```
+
+---
+
+# ⚙️ **Install Dependencies**
+```
+npm install
+```
+
+---
+
+# 🎯 **Start The Bot**
+```
+node index.js
+```
+
+---
+
+# 🌐 **One-Click Deploy**
+
+## ☁️ **Heroku Deploy**
+<p>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/Limon-bot-pixel/Limon-Bot-">
+<img src="https://www.herokucdn.com/deploy/button.svg" width="200"/>
+</a>
+</p>
+
+---
+
+## 🚀 **Koyeb Deploy**
+```
+https://app.koyeb.com/deploy?type=git&repository=github.com/Limon-bot-pixel/Limon-Bot-
+```
+
+---
+
+## ⚡ **Render Deploy**
+```
+https://render.com/deploy?repo=https://github.com/Limon-bot-pixel/Limon-Bot-
+```
+
+---
+
+## 🌀 **Railway Deploy**
+```
+https://railway.app/template/new?template=https://github.com/Limon-bot-pixel/Limon-Bot-
+```
+
+---
+
+## 🛰 **Bot Hosting Deploy**
+```
+https://bot-hosting.net/deploy/?repo=https://github.com/Limon-bot-pixel/Limon-Bot-
+```
+
+---
+
+# 🎛️ **Bot Features**
+
+### 🔥 Core Features  
+- Full Multi-Device Support  
+- Stylish Menu  
+- Auto React  
+- AI Chat (GPT)  
+- Welcome / Goodbye  
+- Auto Sticker  
+- AntiLink  
+- AntiSpam  
+- AntiBot  
+- Kick, Promote, Demote  
+- Song / Video Downloader  
+- FB, Insta, YouTube DL  
+- Tagall / Tagadmin  
+- Group Control Panel  
+- Admin Tools  
+
+---
+
+# 👑 **Owner Information**
+```
+Name: Mohammad Limon
+Facebook: Limon BbZ
+WhatsApp: wa.me/+8801623442730
+Telegram: t.me/limon_bbz
+GitHub: github.com/Limon-bot-pixel
+Project: Limon Bot V5
+Developer Tag: Limonايڪـͬــͤــᷜــͨــͣــͪـي
+```
+
+---
+
+# 💠 **Menu Preview**
+```
+┏━━━❰ 🦋 𝐋𝐈𝐌𝐎𝐍 𝐁𝐎𝐓 𝐕𝟓 ❱━━━┓
+┃ Owner: ᴍᴏʜᴀᴍᴍᴀᴅ ʟɪᴍᴏɴ
+┃ Prefix: .
+┃ Uptime: Auto
+┗━━━━━━━━━━━━━━━━━━━━━━━┛
+```
+
+---
+
+# 🦋 **Credits**
+- **Developer:** Limon  
+- **Base Script:** Baileys-MD  
+- **UI Design:** Limon  
+
+---
+
+<p align="center">
+<b>Made with ❤️ by Limon (Limon BbZ)</b>
+</p>
