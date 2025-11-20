@@ -66,9 +66,3 @@ async function connectToWhatsApp() {
 }
 
 connectToWhatsApp()
-
-const handler = require("./message-handler")
-
-sock.ev.on("messages.upsert", async (msg) => {
-    handler(sock, msg)
-})
