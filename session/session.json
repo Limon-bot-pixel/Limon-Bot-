@@ -1,0 +1,41 @@
+{
+  "creds": {
+    "noiseKey": {
+      "private": "",
+      "public": ""
+    },
+    "signedIdentityKey": {
+      "private": "",
+      "public": ""
+    },
+    "signedPreKey": {
+      "keyPair": {
+        "private": "",
+        "public": ""
+      },
+      "signature": "",
+      "keyId": 1
+    },
+    "registrationId": 0,
+    "advSecretKey": "",
+    "processedHistoryMessages": [],
+    "nextPreKeyId": 1,
+    "firstUnuploadedPreKeyId": 1,
+    "serverHasPreKeys": false,
+    "account": {
+      "details": "",
+      "accountSignatureKey": "",
+      "accountSignature": "",
+      "deviceSignature": ""
+    },
+    "signalIdentities": [],
+    "lastAccountSyncTimestamp": 0
+  },
+  "keys": {
+    "preKeys": {},
+    "sessions": {},
+    "senderKeys": {},
+    "appStateSyncKeys": {},
+    "appStateVersions": {}
+  }
+}
