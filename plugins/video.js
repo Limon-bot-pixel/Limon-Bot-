@@ -1,26 +1,42 @@
-const yts = require("yt-search");
-const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
+const { exec } = require("child_process");
 
 module.exports = {
-  name: "video",
-  alias: ["mp4"],
-  category: "Media",
+    command: ["video", "mp4", "tomp4"],
+    description: "Convert any video to mp4 format",
 
-  start: async (sock, m, { text }) => {
-    if (!text) return m.reply("🎥 ভিডিওর নাম লিখুন!\nউদাহরণ: *.video Ami Tomake Chai*");
+    async run({ m, sock }) {
+        try {
+            const quoted = m.quoted || m.message.extendedTextMessage?.contextInfo;
 
-    let search = await yts(text);
-    let res = search.videos[0];
+            if (!quoted || !quoted.message?.videoMessage) {
+                return m.reply("📌 *Please reply to a video to convert it to MP4!*");
+            }
 
-    let api = `https://api.vihangayt.com/download/ytmp4?url=${res.url}`;
-    let data = await axios.get(api);
-    let video = await axios.get(data.data.data.url, { responseType: "arraybuffer" });
+            m.reply("⏳ Converting video...");
 
-    await m.reply(`🎬 *${res.title}* Uploading...`);
+            const mediaPath = await sock.downloadAndSaveMediaMessage(quoted, "input-video");
+            const outputPath = path.join(__dirname, "../media/output.mp4");
 
-    sock.sendMessage(m.chat, {
-      video: video.data,
-      caption: res.title
-    }, { quoted: m });
-  }
-}
+            exec(`ffmpeg -i ${mediaPath} -c:v libx264 -c:a aac ${outputPath}`, async (err) => {
+                if (err) {
+                    console.log(err);
+                    return m.reply("❌ FFmpeg error! Maybe FFmpeg is not installed.");
+                }
+
+                await sock.sendMessage(m.chat, {
+                    video: fs.readFileSync(outputPath),
+                    caption: "✅ *Here is your converted MP4 video*"
+                });
+
+                fs.unlinkSync(mediaPath);
+                fs.unlinkSync(outputPath);
+            });
+
+        } catch (e) {
+            console.log(e);
+            m.reply("⚠️ Error converting video!");
+        }
+    }
+};
