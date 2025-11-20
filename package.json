@@ -1,18 +1,36 @@
 {
-  "name": "limon-bot",
+  "name": "Limon-Bot",
   "version": "1.0.0",
-  "description": "MLS Limon Bot by Limon Bbz",
+  "description": "WhatsApp Bot using Baileys - Created by Limon Bbz",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
-    "deploy": "katabump deploy"
+    "server": "nodemon index.js",
+    "test": "echo \"No test specified\" && exit 0"
   },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "limon-bot",
+    "md-bot"
+  ],
+  "author": "Limon Bbz",
+  "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "latest",
-    "qrcode-terminal": "latest",
-    "axios": "latest",
-    "fs-extra": "latest",
-    "moment-timezone": "latest"
+    "@whiskeysockets/baileys": "^6.6.0",
+    "axios": "^1.6.7",
+    "yt-search": "^2.12.0",
+    "ytdl-core": "^4.11.5",
+    "node-fetch": "^3.3.2",
+    "form-data": "^4.0.0",
+    "cheerio": "^1.0.0",
+    "fs-extra": "^11.2.0",
+    "pino": "^8.15.0",
+    "moment-timezone": "^0.5.45"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
