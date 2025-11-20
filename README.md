@@ -21,7 +21,7 @@
 ## 🟢 Katabump Deploy  
 (আপনার Bot Panel অনুযায়ী লিংক এখানে বসান)
 
-[![Deploy on Katabump](https://img.shields.io/badge/Deploy-Katabump-green?style=for-the-badge)](KATABUMP_LINK_HERE)
+[![Deploy on Katabump](https://img.shields.io/badge/Deploy-Katabump-green?style=for-the-badge)](https://katabump.com/)
 
 ---
 
