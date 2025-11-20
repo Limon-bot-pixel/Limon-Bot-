@@ -1,36 +1,16 @@
 {
   "name": "Limon-Bot",
   "version": "1.0.0",
-  "description": "WhatsApp Bot using Baileys - Created by Limon Bbz",
+  "description": "WhatsApp Bot using Baileys",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "test": "echo \"No test specified\" && exit 0"
+    "start": "node index.js"
   },
-  "keywords": [
-    "whatsapp",
-    "bot",
-    "baileys",
-    "limon-bot",
-    "md-bot"
-  ],
-  "author": "Limon Bbz",
-  "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.6.0",
-    "axios": "^1.6.7",
-    "yt-search": "^2.12.0",
-    "ytdl-core": "^4.11.5",
-    "node-fetch": "^3.3.2",
-    "form-data": "^4.0.0",
-    "cheerio": "^1.0.0",
-    "fs-extra": "^11.2.0",
-    "pino": "^8.15.0",
-    "moment-timezone": "^0.5.45"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3"
+    "@whiskeysockets/baileys": "^6.5.0",
+    "pino": "^9.0.0",
+    "qrcode-terminal": "^0.12.0",
+    "ws": "^8.16.0",
+    "node-fetch": "^3.3.2"
   }
 }
