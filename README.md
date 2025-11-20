@@ -78,8 +78,9 @@ npm start
 
 ---
 ## 📌 PAIR CODE LOGIN 
+[![PAIR CODE]
 
-## https://pair-code-bot.vercel.app/pair
+(https://pair-code-bot.vercel.app/pair)
 
 ## 🔑 WhatsApp Login (QR)
 
