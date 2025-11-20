@@ -1,1 +1,5 @@
+{ "bot_settings": { "bot_name": "Limon Bot", "owner_name": "Limon Bbz", "owner_number": "8801623442730", "prefix": ".", "mode": "public", "auto_read": true, "auto_typing": false, "auto_recording": false },
 
+"features": { "welcome": true, "goodbye": true, "antilink": false, "antibadword": false, "autoreact": true, "leveling": false },
+
+"system": { "version": "5", "last_update": "2025-11-20", "developer": "Limon" } }
