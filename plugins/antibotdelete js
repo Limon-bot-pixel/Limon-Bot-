@@ -1,0 +1,78 @@
+const fs = require("fs");
+
+module.exports = {
+    name: "antibotdelete",
+    alias: ["abd", "botdelete", "antibotdel"],
+    desc: "Auto delete messages from other bots",
+
+    run: async (sock, msg, args) => {
+        try {
+            const from = msg.key.remoteJid;
+            const cmd = args.trim().toLowerCase();
+
+            global.antiBotDelete = global.antiBotDelete || {};
+
+            if (!["on", "off"].includes(cmd)) {
+                return sock.sendMessage(from, {
+                    text: "📌 Example:\n.antibotdelete on\n.antibotdelete off\n\n🍋 Limon Tip: On করলে অন্য কোনো বটের মেসেজ তোমার বট অটো ডিলিট করবে!"
+                });
+            }
+
+            global.antiBotDelete[from] = cmd === "on";
+
+            return sock.sendMessage(from, {
+                text: cmd === "on"
+                    ? "🛡🔥 *Anti Bot Auto Delete ON!*\nএখন অন্য বট মেসেজ দিলে Limon Bot অটো ডিলিট করে দেবে।"
+                    : "🚫 Anti Bot Auto Delete OFF করা হলো।"
+            });
+
+        } catch (err) {
+            console.log("ANTIBOTDELETE CMD ERROR:", err);
+        }
+    }
+};
+
+
+// AUTO DELETE SYSTEM
+module.exports.messageHandler = async (sock, msg) => {
+    try {
+        const jid = msg.key.remoteJid;
+
+        if (!global.antiBotDelete[jid]) return;
+
+        const sender = msg.key.participant || msg.key.remoteJid;
+
+        // Bot identifier: @g.us ছাড়া যাদের 'bot' আছে, বা যাদের forwarding score বেশি
+        const isBot =
+            sender.includes("bot") ||
+            msg.message?.ephemeralMessage ||
+            msg.message?.protocolMessage ||
+            msg.message?.viewOnceMessage ||
+            msg.message?.sendEphemeralNotification ||
+            msg.message?.senderKeyDistributionMessage ||
+            msg.message?.reactionMessage ||
+            (msg.message?.conversation && msg.message.conversation.length > 150);
+
+        if (isBot) {
+            try {
+                await sock.sendMessage(jid, {
+                    delete: {
+                        remoteJid: jid,
+                        id: msg.key.id,
+                        participant: sender
+                    }
+                });
+
+                await sock.sendMessage(jid, {
+                    text: `🛡🔥 *Limon AntiBot:* অন্য বটের মেসেজ ডিলিট করা হয়েছে!`
+                });
+
+            } catch (e) {
+                console.log("DELETE FAILED:", e);
+            }
+        }
+
+    } catch (err) {
+        console.log("ANTIBOT DELETE SYSTEM ERROR:", err);
+    }
+};
