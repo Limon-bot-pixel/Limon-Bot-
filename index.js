@@ -22,7 +22,7 @@ const { Boom } = require("@hapi/boom")
 // ===============================
 
 async function pairLogin() {
-    const { state, saveCreds } = await useMultiFileAuthState("./session/LimonSession")
+    const { state, saveCreds } = await useMultiFileAuthState("./session")
 
     const { version } = await fetchLatestBaileysVersion()
     const conn = makeWASocket({
