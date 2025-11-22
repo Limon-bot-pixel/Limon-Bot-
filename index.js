@@ -1,3 +1,28 @@
+// ====================================================
+// 🍋 LIMON BOT ASCII LOGO (Auto Display on Start)
+// ====================================================
+
+const imageToAscii = require("image-to-ascii");
+
+imageToAscii(
+    "https://i.ibb.co/ys0RZtZ/mls-limon-bot.jpg",
+    {
+        colored: true,
+        size: { width: 45 }
+    },
+    (err, converted) => {
+        if (err) {
+            console.log("Logo Error:", err);
+        } else {
+            console.log(converted);
+            console.log("\n🚀 Limon Bot Starting...\n");
+        }
+    }
+);
+
+// ====================================================
+// END LOGO SECTION
+// ====================================================
 /**
  * Limon Bot - Full Fixed index.js 
  * Created by: Limon Bbz 🍋
