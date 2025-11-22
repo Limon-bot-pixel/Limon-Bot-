@@ -128,7 +128,23 @@ async function startBot() {
         const { connection, lastDisconnect } = update;
 
         if (connection === "open") {
-            console.log("🍋 Limon Bot Connected Successfully!");
+    console.log("🍋 Limon Bot Connected Successfully!");
+
+    // ===== SEND NOTIFICATION TO OWNER ===== //
+    const owner = "8801623442730@s.whatsapp.net"; // Your number
+
+    await sock.sendMessage(owner, {
+        image: { url: "https://i.ibb.co/ys0RZtZ/mls-limon-bot.jpg" },
+        caption: 
+`🍋 *LIMON BOT IS NOW ONLINE!*
+
+🔥 Connected Successfully  
+👑 Owner: Limon Bbz  
+📱 Number: +8801623442730  
+
+✨ All Systems Working Perfectly  
+🚀 Ready To Use Commands!`
+    });
         }
 
         if (connection === "close") {
