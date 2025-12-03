@@ -1,52 +1,65 @@
-// info.js — Limon Bot Full Information Command
+//==================== LIMON BOT XL INFO ====================//
 
-const os = require("os");
-const moment = require("moment-timezone");
+const limonXLLogo = "https://i.postimg.cc/T1qc9P5V/20251125-081422.jpg";
 
 module.exports = {
-    name: "info",
-    alias: ["botinfo", "status"],
-    category: "general",
-    desc: "Show Bot Information",
+   name: "infoxl",
+   alias: ["xlinfo", "botxl"],
+   desc: "Limon Bot Full XL Information",
+   react: "⚡",
 
-    async run({ conn, m }) {
-        try {
+   start: async (Limon, m, { pushName, prefix }) => {
 
-            let uptime = process.uptime();
-            let hours = Math.floor(uptime / 3600);
-            let minutes = Math.floor((uptime % 3600) / 60);
-            let seconds = Math.floor(uptime % 60);
+      const xlText = `
+┏━━━━━━━━━━━━━━━━━━━━━━┓
+┃    ⚡ *LIMON BOT – XL EDITION* ⚡
+┗━━━━━━━━━━━━━━━━━━━━━━┛
 
-            const runtime = `${hours}h ${minutes}m ${seconds}s`;
+🔱 *Owner:* Limon Bbz  
+📞 *Owner Number:* +8801623442730  
 
-            const infoText = `
-🤖 *LIMON BOT Information*
-========================
-
-👑 *Owner:* Limon Bbz  
-📞 *Owner Number:* 8801623442730  
 🤖 *Bot Name:* Limon Bot  
-🔧 *Prefix:* .
-⚡ *Version:* 5.0
-🟢 *Mode:* Public
+🚀 *Edition:* XL Premium  
+💠 *Version:* 10.0.2 (XL Engine)  
+📡 *Mode:* Multi-Device / Auto-Stable  
+🛡 *Security:* Anti-Crash + Anti-Spam  
+⚙ *AI Power:* Limon Smart Engine v3.0  
 
-⏳ *Uptime:* ${runtime}
-📅 *Date:* ${moment().tz("Asia/Dhaka").format("DD MMMM YYYY")}
-🕒 *Time:* ${moment().tz("Asia/Dhaka").format("hh:mm A")}
+━━━━━━━━━━━━━━━━━━━━━━━
+🧩 *Bot Features (XL)*  
+✓ Smart Welcome + Leave  
+✓ Hack Menu + Support Menu  
+✓ Auto Sticker + Auto Reply  
+✓ Message Tracker  
+✓ Anti Toxic / Anti BadWords  
+✓ Group Control System  
+✓ High Speed ML Commands  
+✓ HD Banner System  
+✓ Owner Full Panel  
+━━━━━━━━━━━━━━━━━━━━━━━
 
-🧠 *System Info:*  
-• Platform: ${os.platform()}  
-• RAM: ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)} GB  
-• Free RAM: ${(os.freemem() / 1024 / 1024 / 1024).toFixed(2)} GB  
+🧑‍💻 *User:* ${pushName}  
+💬 *Prefix:* ${prefix}
 
-🪄 *Thanks for using Limon Bot 💛*
-`;
+📌 *Powered By:*  
+Limon ايڪـͬــͤــᷜــͨــͣــͪـي_么 — The Ultimate Commander ⚡
 
-            await conn.sendMessage(m.chat, { text: infoText });
+━━━━━━━━━━━━━━━━━━━━━━━
+🔥 *Thanks For Using Limon Bot XL Edition!*  
+━━━━━━━━━━━━━━━━━━━━━━━
+      `;
 
-        } catch (e) {
-            console.log("INFO ERROR:", e);
-            m.reply("❌ Something went wrong!");
-        }
-    }
+      try {
+         await Limon.sendMessage(
+            m.from,
+            {
+               image: { url: limonXLLogo },
+               caption: xlText
+            },
+            { quoted: m }
+         );
+      } catch (e) {
+         console.log(e);
+      }
+   }
 };
